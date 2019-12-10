@@ -1,0 +1,166 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Flat File Connection Manager"
+  DTS:DTSID="{321329A9-1522-412D-9CFF-C276276C5AFC}"
+  DTS:Description="flat file connection manager voor csv bestand"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="8192"
+      DTS:HeaderRowDelimiter="_x003B_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Users\andre\TI\BI\restaurants\zomato.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="303"
+          DTS:TextQualified="True"
+          DTS:ObjectName="url"
+          DTS:DTSID="{A12F0FCD-3427-4AE9-9EC6-20115D2B3EDF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="302"
+          DTS:TextQualified="True"
+          DTS:ObjectName="address"
+          DTS:DTSID="{24B3DAF0-715B-47C7-AAF8-A6305FB62E26}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="name"
+          DTS:DTSID="{1037D80F-EAA8-4424-AB77-000074531A04}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="128"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="OnlineOrder"
+          DTS:DTSID="{5D25F2D9-509E-4A7E-AFA4-28C870BBA563}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="67"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="BookTable"
+          DTS:DTSID="{6D82F506-783E-40EA-BF09-2FC273947669}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="7"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Rate"
+          DTS:DTSID="{459F9829-3233-4844-9F5C-F3BDA61E66F1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="8000"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Votes"
+          DTS:DTSID="{8C20F4EE-8E4F-4F89-842E-4B43A6BC5A5C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="100"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Phone"
+          DTS:DTSID="{0F2C89AA-84B9-4BCF-8FAE-D2692D2B0766}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="2613"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Neigborhood"
+          DTS:DTSID="{FA7BC298-5336-410F-9753-C61C5BE7D8DF}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="302"
+          DTS:TextQualified="True"
+          DTS:ObjectName="RestType"
+          DTS:DTSID="{2CDC5E11-69C1-4CA4-BA3B-C2257214DDB2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="1312"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="DishLiked"
+          DTS:DTSID="{6E92AFB2-EBF5-4CBE-856C-134377AB4BC1}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="302"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Cuisines"
+          DTS:DTSID="{156D4188-F855-4BDE-964C-516070206079}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="12"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="AproxCost"
+          DTS:DTSID="{845329CD-595B-4974-80A6-917D895B923F}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="302"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ReviewList"
+          DTS:DTSID="{CFC518AA-C6E4-4837-A5BD-2B971DF034C2}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:DataType="302"
+          DTS:TextQualified="True"
+          DTS:ObjectName="MenuItem"
+          DTS:DTSID="{694E6F37-8310-4114-B24F-E13CFA39C845}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x003B_"
+          DTS:MaximumWidth="1976"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="BusinessType"
+          DTS:DTSID="{FB33E36B-F200-40D7-BDB7-A0F4E7566E83}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="302"
+          DTS:TextQualified="True"
+          DTS:ObjectName="city"
+          DTS:DTSID="{E5492F4A-EBCC-41A6-AAA8-5F56617626BC}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

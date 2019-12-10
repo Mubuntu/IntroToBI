@@ -1,0 +1,386 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/19/2019 11:41:15 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MUBUNTU-XPS13"
+  DTS:CreatorName="MUBUNTU-XPS13\mubuntu"
+  DTS:DTSID="{C4ABF830-1FE7-4C64-B115-7BBCB0D33BBA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1900.78"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{774E24A1-3815-4A17-B92B-0B4DE884B41B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MUBUNTU-XPS13.RestaurantWarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E00CC6B3-7D1F-4BED-B03A-2D27004931E9}"
+      DTS:ObjectName="MUBUNTU-XPS13.RestaurantWarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=MUBUNTU-XPS13;Initial Catalog=RestaurantWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Power Query Connection Manager]"
+      DTS:CreationName="PowerQuery"
+      DTS:DTSID="{3C0045CE-4163-4811-9FA3-8A76E48FC0B2}"
+      DTS:ObjectName="Power Query Connection Manager">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="[{&quot;kind&quot;:&quot;File&quot;,&quot;path&quot;:&quot;c:\\users\\andre\\ti\\bi\\restaurants\\zomato.csv&quot;,&quot;AuthenticationKind&quot;:&quot;Windows&quot;}]" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Power Query Connection Manager 1]"
+      DTS:CreationName="PowerQuery"
+      DTS:DTSID="{61A0EE92-12FF-44B2-97A8-FBDEA0DB3F0A}"
+      DTS:ObjectName="Power Query Connection Manager 1">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="[{&quot;kind&quot;:&quot;File&quot;,&quot;path&quot;:&quot;c:\\users\\andre\\ti\\bi\\restaurants\\zomato.csv&quot;,&quot;AuthenticationKind&quot;:&quot;Windows&quot;}]" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{150CD34C-F225-47F4-9CE3-C3CD9D913808}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[RESTAURANT_TYPES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MUBUNTU-XPS13.RestaurantWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[MUBUNTU-XPS13.RestaurantWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[rest_type ]"
+                      cachedDataType="nText"
+                      cachedName="rest_type "
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rest_type]"
+                      lineageId="Package\Data Flow Task\Power Query Source.Outputs[Output].Columns[rest_type ]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[rest_type]"
+                      dataType="nText"
+                      name="rest_type" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Power Query Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              description="Power Query Source"
+              name="Power Query Source">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode of the query."
+                  name="QueryMode"
+                  typeConverter="Microsoft.SqlServer.IntegrationServices.PowerQuery.TypeConverters.QueryModeTypeConverter, Microsoft.SqlServer.IntegrationServices.PowerQuery, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">0</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the M query to be executed."
+                  name="SingleQueryVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The single M query to be executed."
+                  name="SingleQueryText"
+                  state="cdata"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"><![CDATA[let
+    Source = Csv.Document(File.Contents("C:\Users\andre\TI\BI\restaurants\zomato.csv"),[Delimiter=";", Columns=17, QuoteStyle=QuoteStyle.Csv]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"url", type text}, {"address", type text}, {"name", type text}, {"online_order", type text}, {"book_table", type text}, {"rate", type text}, {"votes", Int64.Type}, {"phone", type text}, {"location", type text}, {"rest_type", type text}, {"dish_liked", type text}, {"cuisines", type text}, {"approx_cost(for two people)", type number}, {"reviews_list", type text}, {"menu_item", type text}, {"listed_in(type)", type text}, {"listed_in(city)", type text}})
+in
+    #"Changed Type"]]></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.PowerQuerySource</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Power Query Source.Connections[File Connection]"
+                  connectionManagerID="Package.ConnectionManagers[Power Query Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Power Query Connection Manager 1]"
+                  description="File/c:\users\andre\ti\bi\restaurants\zomato.csv"
+                  name="File Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Power Query Source.Outputs[Output]"
+                  name="Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].Columns[rest_type ]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[rest_type]"
+                      lineageId="Package\Data Flow Task\Power Query Source.Outputs[Output].Columns[rest_type ]"
+                      name="rest_type " />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[url]"
+                      dataType="nText"
+                      name="url" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[address]"
+                      dataType="nText"
+                      name="address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[name]"
+                      dataType="nText"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[online_order]"
+                      dataType="nText"
+                      name="online_order" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[book_table]"
+                      dataType="nText"
+                      name="book_table" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[rate]"
+                      dataType="nText"
+                      name="rate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[votes]"
+                      dataType="i8"
+                      name="votes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[phone]"
+                      dataType="nText"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[location]"
+                      dataType="nText"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[rest_type]"
+                      dataType="nText"
+                      name="rest_type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[dish_liked]"
+                      dataType="nText"
+                      name="dish_liked" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[cuisines]"
+                      dataType="nText"
+                      name="cuisines" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[approx_cost(for two people)]"
+                      dataType="r8"
+                      name="approx_cost(for two people)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[reviews_list]"
+                      dataType="nText"
+                      name="reviews_list" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[menu_item]"
+                      dataType="nText"
+                      name="menu_item" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[listed_in(type)]"
+                      dataType="nText"
+                      name="listed_in(type)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Power Query Source.Outputs[Output].ExternalColumns[listed_in(city)]"
+                      dataType="nText"
+                      name="listed_in(city)" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Output"
+              startId="Package\Data Flow Task\Power Query Source.Outputs[Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="31.9999987284343,20.8000001653036" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Data Flow Task\Power Query Source"
+          TopLeft="76.8,39.2" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="85.6,144" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output]"
+          TopLeft="167.6,80.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.2"
+              Start="0,0"
+              End="0,55.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
